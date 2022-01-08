@@ -63,5 +63,41 @@ namespace QuanLyBenhNhan
             fr_toathuoc fr_Toathuoc = new fr_toathuoc();
             fr_Toathuoc.Show();
         }
+
+        private void bệnhNhânToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ThongKe.frTk_BN frTk_BN = new ThongKe.frTk_BN();
+            frTk_BN.Show();
+        }
+
+        private void chuyểnViệnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongKe.fr_TK_BN_CV fr_cv= new ThongKe.fr_TK_BN_CV();
+            fr_cv.Show();
+        }
+
+        private void nộiTrúToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongKe.fr_Tk_BN_NT fr_Tk_BN_NT = new ThongKe.fr_Tk_BN_NT();
+            fr_Tk_BN_NT.Show();
+        }
+
+        private void ngoạiTrúToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongKe.fr_TK_BN_NgTru fr_NGtru= new ThongKe.fr_TK_BN_NgTru();
+            fr_NGtru.Show();
+        }
+
+        private void bácSiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ThongKe.fr_TK_BS fr_bs= new ThongKe.fr_TK_BS();
+            fr_bs.Show();
+        }
+
+        private void toaThuốcToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ThongKe.fr_Tk_Thuoc fr_Thuoc = new ThongKe.fr_Tk_Thuoc();
+            fr_Thuoc.Show();
+        }
     }
 }

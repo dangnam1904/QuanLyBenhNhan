@@ -49,9 +49,9 @@ namespace QuanLyBenhNhan
             this.label11 = new System.Windows.Forms.Label();
             this.cb_maThuoc = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.rtxt_mota = new System.Windows.Forms.RichTextBox();
             this.rtxt_ghichu = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.rtxt_mota = new System.Windows.Forms.RichTextBox();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gridview_Thuoc)).BeginInit();
@@ -123,7 +123,7 @@ namespace QuanLyBenhNhan
             this.txt_find_by_ma.Name = "txt_find_by_ma";
             this.txt_find_by_ma.Size = new System.Drawing.Size(193, 27);
             this.txt_find_by_ma.TabIndex = 28;
-            this.txt_find_by_ma.Text = "Mã bệnh nhân cần tìm";
+            this.txt_find_by_ma.Text = "Mã thuốc cần tìm";
             // 
             // btn_add
             // 
@@ -145,7 +145,7 @@ namespace QuanLyBenhNhan
             this.txt_find_by_name.Name = "txt_find_by_name";
             this.txt_find_by_name.Size = new System.Drawing.Size(192, 27);
             this.txt_find_by_name.TabIndex = 27;
-            this.txt_find_by_name.Text = "Tên bệnh nhân cần tìm";
+            this.txt_find_by_name.Text = "Tên thuốc cần tìm";
             // 
             // bt_find_name
             // 
@@ -222,7 +222,7 @@ namespace QuanLyBenhNhan
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(365, 61);
+            this.label3.Location = new System.Drawing.Point(497, 48);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 15);
             this.label3.TabIndex = 4;
@@ -294,17 +294,9 @@ namespace QuanLyBenhNhan
             this.panel1.Size = new System.Drawing.Size(959, 224);
             this.panel1.TabIndex = 12;
             // 
-            // rtxt_mota
-            // 
-            this.rtxt_mota.Location = new System.Drawing.Point(425, 58);
-            this.rtxt_mota.Name = "rtxt_mota";
-            this.rtxt_mota.Size = new System.Drawing.Size(330, 82);
-            this.rtxt_mota.TabIndex = 22;
-            this.rtxt_mota.Text = "";
-            // 
             // rtxt_ghichu
             // 
-            this.rtxt_ghichu.Location = new System.Drawing.Point(90, 157);
+            this.rtxt_ghichu.Location = new System.Drawing.Point(99, 157);
             this.rtxt_ghichu.Name = "rtxt_ghichu";
             this.rtxt_ghichu.Size = new System.Drawing.Size(330, 47);
             this.rtxt_ghichu.TabIndex = 24;
@@ -318,6 +310,14 @@ namespace QuanLyBenhNhan
             this.label4.Size = new System.Drawing.Size(48, 15);
             this.label4.TabIndex = 23;
             this.label4.Text = "Ghi chú";
+            // 
+            // rtxt_mota
+            // 
+            this.rtxt_mota.Location = new System.Drawing.Point(557, 45);
+            this.rtxt_mota.Name = "rtxt_mota";
+            this.rtxt_mota.Size = new System.Drawing.Size(330, 82);
+            this.rtxt_mota.TabIndex = 22;
+            this.rtxt_mota.Text = "";
             // 
             // fr_toathuoc
             // 

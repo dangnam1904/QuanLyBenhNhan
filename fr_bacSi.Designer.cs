@@ -56,12 +56,12 @@ namespace QuanLyBenhNhan
             this.cb_TenBacSi = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_chuyenmon = new System.Windows.Forms.ComboBox();
             this.txt_sdt = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_diachi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txt_chuyenmon = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Gridview_BS)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -180,7 +180,7 @@ namespace QuanLyBenhNhan
             this.txt_find_by_ma.Name = "txt_find_by_ma";
             this.txt_find_by_ma.Size = new System.Drawing.Size(193, 27);
             this.txt_find_by_ma.TabIndex = 28;
-            this.txt_find_by_ma.Text = "Mã bệnh nhân cần tìm";
+            this.txt_find_by_ma.Text = "Mã cần tìm";
             // 
             // Gridview_BS
             // 
@@ -231,7 +231,7 @@ namespace QuanLyBenhNhan
             this.txt_find_by_name.Name = "txt_find_by_name";
             this.txt_find_by_name.Size = new System.Drawing.Size(192, 27);
             this.txt_find_by_name.TabIndex = 27;
-            this.txt_find_by_name.Text = "Tên bệnh nhân cần tìm";
+            this.txt_find_by_name.Text = "Tên bác sĩ cần tìm";
             // 
             // bt_find_name
             // 
@@ -376,6 +376,16 @@ namespace QuanLyBenhNhan
             this.panel1.Size = new System.Drawing.Size(957, 224);
             this.panel1.TabIndex = 9;
             // 
+            // txt_chuyenmon
+            // 
+            this.txt_chuyenmon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txt_chuyenmon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.txt_chuyenmon.FormattingEnabled = true;
+            this.txt_chuyenmon.Location = new System.Drawing.Point(99, 142);
+            this.txt_chuyenmon.Name = "txt_chuyenmon";
+            this.txt_chuyenmon.Size = new System.Drawing.Size(206, 23);
+            this.txt_chuyenmon.TabIndex = 31;
+            // 
             // txt_sdt
             // 
             this.txt_sdt.Location = new System.Drawing.Point(713, 182);
@@ -416,16 +426,6 @@ namespace QuanLyBenhNhan
             this.label5.Size = new System.Drawing.Size(76, 15);
             this.label5.TabIndex = 25;
             this.label5.Text = "Chuyên môn";
-            // 
-            // txt_chuyenmon
-            // 
-            this.txt_chuyenmon.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.txt_chuyenmon.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.txt_chuyenmon.FormattingEnabled = true;
-            this.txt_chuyenmon.Location = new System.Drawing.Point(99, 142);
-            this.txt_chuyenmon.Name = "txt_chuyenmon";
-            this.txt_chuyenmon.Size = new System.Drawing.Size(206, 23);
-            this.txt_chuyenmon.TabIndex = 31;
             // 
             // fr_bacSi
             // 

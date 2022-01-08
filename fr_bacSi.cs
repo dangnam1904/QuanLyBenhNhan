@@ -82,6 +82,7 @@ namespace QuanLyBenhNhan
             txt_tenKhoa.Text = Gridview_BS.CurrentRow.Cells["TenKhoa"].Value.ToString();
             txt_chuyenmon.Text = Gridview_BS.CurrentRow.Cells["ChuyenMon"].Value.ToString();
             txt_diachi.Text = Gridview_BS.CurrentRow.Cells["DiaChi"].Value.ToString();
+            cb_TenBacSi.Text = Gridview_BS.CurrentRow.Cells["TenBacSi"].Value.ToString();
             string gioitinh = Gridview_BS.CurrentRow.Cells["GioiTinh"].Value.ToString();
             if(gioitinh == "Nam")
             {

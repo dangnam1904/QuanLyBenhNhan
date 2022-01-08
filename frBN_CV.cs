@@ -302,5 +302,10 @@ namespace QuanLyBenhNhan
             Functions.RunSql(sql);
             LoadDataGridView();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            LoadDataGridView();
+        }
     }
 }

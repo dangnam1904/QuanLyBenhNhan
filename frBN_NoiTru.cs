@@ -322,6 +322,11 @@ namespace QuanLyBenhNhan
             Functions.RunSql(sql_sort);
             LoadDataGridView();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            LoadDataGridView();
+        }
     }
     
 }

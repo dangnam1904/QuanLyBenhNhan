@@ -67,6 +67,7 @@ namespace QuanLyBenhNhan
             this.btn_find_maHso = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Gridview_BN_Ngoaitru)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -79,7 +80,7 @@ namespace QuanLyBenhNhan
             this.txt_mabacsi.Name = "txt_mabacsi";
             this.txt_mabacsi.Size = new System.Drawing.Size(100, 23);
             this.txt_mabacsi.TabIndex = 23;
-            this.txt_mabacsi.TextChanged += new System.EventHandler(this.txt_mabacsi_TextChanged);
+  
             // 
             // label12
             // 
@@ -89,7 +90,7 @@ namespace QuanLyBenhNhan
             this.label12.Size = new System.Drawing.Size(57, 15);
             this.label12.TabIndex = 22;
             this.label12.Text = "Mã bác sĩ";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
+        
             // 
             // label11
             // 
@@ -100,7 +101,7 @@ namespace QuanLyBenhNhan
             this.label11.Size = new System.Drawing.Size(267, 21);
             this.label11.TabIndex = 21;
             this.label11.Text = "QUẢN LÍ BỆNH NHÂN NGOẠI TRÚ";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
+           
             // 
             // cb_maNgtru
             // 
@@ -111,7 +112,7 @@ namespace QuanLyBenhNhan
             this.cb_maNgtru.Name = "cb_maNgtru";
             this.cb_maNgtru.Size = new System.Drawing.Size(121, 23);
             this.cb_maNgtru.TabIndex = 20;
-            this.cb_maNgtru.SelectedIndexChanged += new System.EventHandler(this.cb_maNgtru_SelectedIndexChanged);
+          
             // 
             // label10
             // 
@@ -121,8 +122,7 @@ namespace QuanLyBenhNhan
             this.label10.Size = new System.Drawing.Size(75, 15);
             this.label10.TabIndex = 19;
             this.label10.Text = "Mã ngoại trú";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
-            // 
+     
             // cb_maHS
             // 
             this.cb_maHS.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -132,7 +132,7 @@ namespace QuanLyBenhNhan
             this.cb_maHS.Name = "cb_maHS";
             this.cb_maHS.Size = new System.Drawing.Size(121, 23);
             this.cb_maHS.TabIndex = 18;
-            this.cb_maHS.SelectedIndexChanged += new System.EventHandler(this.cb_maHS_SelectedIndexChanged);
+         
             // 
             // txt_BHYT
             // 
@@ -140,7 +140,7 @@ namespace QuanLyBenhNhan
             this.txt_BHYT.Name = "txt_BHYT";
             this.txt_BHYT.Size = new System.Drawing.Size(180, 23);
             this.txt_BHYT.TabIndex = 17;
-            this.txt_BHYT.TextChanged += new System.EventHandler(this.txt_BHYT_TextChanged);
+         
             // 
             // label9
             // 
@@ -150,7 +150,7 @@ namespace QuanLyBenhNhan
             this.label9.Size = new System.Drawing.Size(52, 15);
             this.label9.TabIndex = 16;
             this.label9.Text = "Số BHYT";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+           
             // 
             // label8
             // 
@@ -160,8 +160,7 @@ namespace QuanLyBenhNhan
             this.label8.Size = new System.Drawing.Size(53, 15);
             this.label8.TabIndex = 15;
             this.label8.Text = "Mã khoa";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
-            // 
+         
             // cb_maKhoa
             // 
             this.cb_maKhoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -171,15 +170,14 @@ namespace QuanLyBenhNhan
             this.cb_maKhoa.Name = "cb_maKhoa";
             this.cb_maKhoa.Size = new System.Drawing.Size(121, 23);
             this.cb_maKhoa.TabIndex = 14;
-            this.cb_maKhoa.SelectedIndexChanged += new System.EventHandler(this.cb_maKhoa_SelectedIndexChanged);
-            // 
+       
             // txt_mathuoc
             // 
             this.txt_mathuoc.Location = new System.Drawing.Point(832, 58);
             this.txt_mathuoc.Name = "txt_mathuoc";
             this.txt_mathuoc.Size = new System.Drawing.Size(90, 23);
             this.txt_mathuoc.TabIndex = 13;
-            this.txt_mathuoc.TextChanged += new System.EventHandler(this.txt_mathuoc_TextChanged);
+          
             // 
             // label7
             // 
@@ -189,7 +187,7 @@ namespace QuanLyBenhNhan
             this.label7.Size = new System.Drawing.Size(78, 15);
             this.label7.TabIndex = 12;
             this.label7.Text = "Mã toa thuốc";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+         
             // 
             // txt_tenThuoc
             // 
@@ -197,8 +195,7 @@ namespace QuanLyBenhNhan
             this.txt_tenThuoc.Name = "txt_tenThuoc";
             this.txt_tenThuoc.Size = new System.Drawing.Size(199, 23);
             this.txt_tenThuoc.TabIndex = 11;
-            this.txt_tenThuoc.TextChanged += new System.EventHandler(this.txt_tenThuoc_TextChanged);
-            // 
+         
             // label6
             // 
             this.label6.AutoSize = true;
@@ -207,15 +204,14 @@ namespace QuanLyBenhNhan
             this.label6.Size = new System.Drawing.Size(59, 15);
             this.label6.TabIndex = 10;
             this.label6.Text = "Tên thuốc";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
-            // 
+     
             // txt_ngaykham
             // 
             this.txt_ngaykham.Location = new System.Drawing.Point(723, 103);
             this.txt_ngaykham.Name = "txt_ngaykham";
             this.txt_ngaykham.Size = new System.Drawing.Size(199, 23);
             this.txt_ngaykham.TabIndex = 9;
-            this.txt_ngaykham.TextChanged += new System.EventHandler(this.txt_ngaykham_TextChanged);
+          
             // 
             // label5
             // 
@@ -225,8 +221,7 @@ namespace QuanLyBenhNhan
             this.label5.Size = new System.Drawing.Size(68, 15);
             this.label5.TabIndex = 8;
             this.label5.Text = "Ngày khám";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
-            // 
+         
             // checkbox_nu
             // 
             this.checkbox_nu.AutoSize = true;
@@ -236,8 +231,7 @@ namespace QuanLyBenhNhan
             this.checkbox_nu.TabIndex = 7;
             this.checkbox_nu.Text = "Nữ";
             this.checkbox_nu.UseVisualStyleBackColor = true;
-            this.checkbox_nu.CheckedChanged += new System.EventHandler(this.checkbox_nu_CheckedChanged);
-            // 
+           
             // Gridview_BN_Ngoaitru
             // 
             this.Gridview_BN_Ngoaitru.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -247,7 +241,7 @@ namespace QuanLyBenhNhan
             this.Gridview_BN_Ngoaitru.RowTemplate.Height = 25;
             this.Gridview_BN_Ngoaitru.Size = new System.Drawing.Size(964, 148);
             this.Gridview_BN_Ngoaitru.TabIndex = 0;
-            this.Gridview_BN_Ngoaitru.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Gridview_BN_Ngoaitru_CellContentClick);
+
             this.Gridview_BN_Ngoaitru.Click += new System.EventHandler(this.Gridview_BN_Ngoaitru_Click);
             // 
             // checkbox_nam
@@ -259,7 +253,7 @@ namespace QuanLyBenhNhan
             this.checkbox_nam.TabIndex = 6;
             this.checkbox_nam.Text = "Nam";
             this.checkbox_nam.UseVisualStyleBackColor = true;
-            this.checkbox_nam.CheckedChanged += new System.EventHandler(this.checkbox_nam_CheckedChanged);
+           
             // 
             // txt_bacsikham
             // 
@@ -267,7 +261,7 @@ namespace QuanLyBenhNhan
             this.txt_bacsikham.Name = "txt_bacsikham";
             this.txt_bacsikham.Size = new System.Drawing.Size(168, 23);
             this.txt_bacsikham.TabIndex = 5;
-            this.txt_bacsikham.TextChanged += new System.EventHandler(this.txt_bacsikham_TextChanged);
+         
             // 
             // txt_ngaysinh
             // 
@@ -275,8 +269,7 @@ namespace QuanLyBenhNhan
             this.txt_ngaysinh.Name = "txt_ngaysinh";
             this.txt_ngaysinh.Size = new System.Drawing.Size(100, 23);
             this.txt_ngaysinh.TabIndex = 5;
-            this.txt_ngaysinh.TextChanged += new System.EventHandler(this.txt_ngaysinh_TextChanged);
-            // 
+     
             // label4
             // 
             this.label4.AutoSize = true;
@@ -285,7 +278,7 @@ namespace QuanLyBenhNhan
             this.label4.Size = new System.Drawing.Size(70, 15);
             this.label4.TabIndex = 4;
             this.label4.Text = "Bác sĩ khám";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+   
             // 
             // label3
             // 
@@ -295,7 +288,7 @@ namespace QuanLyBenhNhan
             this.label3.Size = new System.Drawing.Size(60, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "Ngày sinh";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+     
             // 
             // label2
             // 
@@ -305,8 +298,7 @@ namespace QuanLyBenhNhan
             this.label2.Size = new System.Drawing.Size(85, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Tên bệnh nhân";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
+      
             // cb_TenBn
             // 
             this.cb_TenBn.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -316,8 +308,7 @@ namespace QuanLyBenhNhan
             this.cb_TenBn.Name = "cb_TenBn";
             this.cb_TenBn.Size = new System.Drawing.Size(181, 23);
             this.cb_TenBn.TabIndex = 2;
-            this.cb_TenBn.SelectedIndexChanged += new System.EventHandler(this.cb_TenBn_SelectedIndexChanged);
-            // 
+     
             // label1
             // 
             this.label1.AutoSize = true;
@@ -326,7 +317,7 @@ namespace QuanLyBenhNhan
             this.label1.Size = new System.Drawing.Size(56, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã hồ sơ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+      
             // 
             // panel3
             // 
@@ -336,10 +327,11 @@ namespace QuanLyBenhNhan
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(964, 148);
             this.panel3.TabIndex = 5;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+         
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btn_sort);
             this.panel2.Controls.Add(this.btn_delete);
             this.panel2.Controls.Add(this.txt_find_by_ma);
@@ -354,8 +346,7 @@ namespace QuanLyBenhNhan
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(964, 100);
             this.panel2.TabIndex = 4;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
+    
             // btn_sort
             // 
             this.btn_sort.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -391,7 +382,7 @@ namespace QuanLyBenhNhan
             this.txt_find_by_ma.Size = new System.Drawing.Size(193, 27);
             this.txt_find_by_ma.TabIndex = 28;
             this.txt_find_by_ma.Text = "Mã bệnh nhân cần tìm";
-            this.txt_find_by_ma.TextChanged += new System.EventHandler(this.txt_find_by_ma_TextChanged);
+      
             // 
             // btn_add
             // 
@@ -414,7 +405,7 @@ namespace QuanLyBenhNhan
             this.txt_find_by_name.Size = new System.Drawing.Size(192, 27);
             this.txt_find_by_name.TabIndex = 27;
             this.txt_find_by_name.Text = "Tên bệnh nhân cần tìm";
-            this.txt_find_by_name.TextChanged += new System.EventHandler(this.txt_find_by_name_TextChanged);
+    
             // 
             // bt_find_name
             // 
@@ -501,7 +492,19 @@ namespace QuanLyBenhNhan
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(964, 232);
             this.panel1.TabIndex = 3;
-      
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = global::QuanLyBenhNhan.Properties.Resources.refresh_16;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(767, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 26);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frBN_ngoaitru
             // 
@@ -563,5 +566,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Button btn_save;
         private System.Windows.Forms.Button btn_find_maHso;
         private System.Windows.Forms.Button btn_edit;
+        private System.Windows.Forms.Button button1;
     }
 }

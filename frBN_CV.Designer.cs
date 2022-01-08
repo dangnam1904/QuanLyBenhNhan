@@ -65,6 +65,7 @@ namespace QuanLyBenhNhan
             this.label6 = new System.Windows.Forms.Label();
             this.btn_add = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Gridview_BN_CV)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -438,6 +439,7 @@ namespace QuanLyBenhNhan
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btn_sort);
             this.panel2.Controls.Add(this.txt_find_by_ma);
             this.panel2.Controls.Add(this.txt_find_by_name);
@@ -452,6 +454,19 @@ namespace QuanLyBenhNhan
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(973, 100);
             this.panel2.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = global::QuanLyBenhNhan.Properties.Resources.refresh_16;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(767, 61);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 26);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frBN_CV
             // 
@@ -512,5 +527,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button1;
     }
 }

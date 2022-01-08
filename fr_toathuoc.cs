@@ -97,9 +97,8 @@ namespace QuanLyBenhNhan
           
             if (Functions.CheckKey(sql) == false )
             {
-                    String sql_add = "insert into ToaThuoc values('N'" + cb_maThuoc.Text.Trim() + "',N'" + cb_TenThuoc.Text.Trim() + "',N'" + rtxt_mota.Text.Trim() + "',N'" + rtxt_ghichu.Text.Trim() + "' ')";
-                    Functions.RunSql(sql_add);
-     
+                    String sql_add = "insert into ToaThuoc values('" + cb_maThuoc.Text.Trim() + "',N'" + cb_TenThuoc.Text.Trim() + "',N'" + rtxt_mota.Text.Trim() + "',N'" + rtxt_ghichu.Text.Trim() + "')";
+                Functions.RunSql(sql_add);
             }
             else
             {
