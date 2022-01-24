@@ -47,7 +47,7 @@ namespace QuanLyBenhNhan
             Gridview_BN_Ngoaitru.Columns[8].HeaderText = "Bác sĩ khám";
             Gridview_BN_Ngoaitru.Columns[9].HeaderText = "Mã khoa";
             Gridview_BN_Ngoaitru.Columns[10].HeaderText = "Mã toa thuốc";
-            Gridview_BN_Ngoaitru.Columns[10].HeaderText = "Tên thuốc";
+            Gridview_BN_Ngoaitru.Columns[11].HeaderText = "Tên thuốc";
             Gridview_BN_Ngoaitru.AllowUserToAddRows = false; //Không cho người dùng thêm dữ liệu trực tiếp
             Gridview_BN_Ngoaitru.EditMode = DataGridViewEditMode.EditProgrammatically; //Không cho sửa dữ liệu trực tiếp
 

@@ -30,7 +30,6 @@ namespace QuanLyBenhNhan
         private void InitializeComponent()
         {
             this.checkbox_nam = new System.Windows.Forms.CheckBox();
-            this.txt_ngaysinh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_TenBn = new System.Windows.Forms.ComboBox();
@@ -38,6 +37,7 @@ namespace QuanLyBenhNhan
             this.panel3 = new System.Windows.Forms.Panel();
             this.Gridview_BN = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_sort = new System.Windows.Forms.Button();
             this.btn_delete = new System.Windows.Forms.Button();
             this.txt_find_by_ma = new System.Windows.Forms.TextBox();
@@ -48,14 +48,12 @@ namespace QuanLyBenhNhan
             this.btn_find_maHso = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_tenLoai = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.cb_maLoai = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.cb_maHS = new System.Windows.Forms.ComboBox();
             this.checkbox_nu = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Gridview_BN)).BeginInit();
             this.panel2.SuspendLayout();
@@ -71,13 +69,6 @@ namespace QuanLyBenhNhan
             this.checkbox_nam.TabIndex = 6;
             this.checkbox_nam.Text = "Nam";
             this.checkbox_nam.UseVisualStyleBackColor = true;
-            // 
-            // txt_ngaysinh
-            // 
-            this.txt_ngaysinh.Location = new System.Drawing.Point(476, 58);
-            this.txt_ngaysinh.Name = "txt_ngaysinh";
-            this.txt_ngaysinh.Size = new System.Drawing.Size(127, 23);
-            this.txt_ngaysinh.TabIndex = 5;
             // 
             // label3
             // 
@@ -153,6 +144,19 @@ namespace QuanLyBenhNhan
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(959, 100);
             this.panel2.TabIndex = 7;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = global::QuanLyBenhNhan.Properties.Resources.refresh_16;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(767, 66);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 26);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Refresh";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_sort
             // 
@@ -267,15 +271,13 @@ namespace QuanLyBenhNhan
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.txt_tenLoai);
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.cb_maLoai);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.cb_maHS);
             this.panel1.Controls.Add(this.checkbox_nu);
             this.panel1.Controls.Add(this.checkbox_nam);
-            this.panel1.Controls.Add(this.txt_ngaysinh);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cb_TenBn);
@@ -286,22 +288,13 @@ namespace QuanLyBenhNhan
             this.panel1.Size = new System.Drawing.Size(959, 184);
             this.panel1.TabIndex = 6;
             // 
-            // txt_tenLoai
+            // dateTimePicker1
             // 
-            this.txt_tenLoai.Location = new System.Drawing.Point(738, 104);
-            this.txt_tenLoai.Name = "txt_tenLoai";
-            this.txt_tenLoai.Size = new System.Drawing.Size(194, 23);
-            this.txt_tenLoai.TabIndex = 24;
-            this.txt_tenLoai.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(625, 107);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 15);
-            this.label4.TabIndex = 23;
-            this.label4.Text = "Tên loại bệnh nhân";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(476, 54);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(137, 23);
+            this.dateTimePicker1.TabIndex = 25;
             // 
             // label11
             // 
@@ -320,7 +313,7 @@ namespace QuanLyBenhNhan
             this.cb_maLoai.FormattingEnabled = true;
             this.cb_maLoai.Location = new System.Drawing.Point(476, 104);
             this.cb_maLoai.Name = "cb_maLoai";
-            this.cb_maLoai.Size = new System.Drawing.Size(97, 23);
+            this.cb_maLoai.Size = new System.Drawing.Size(137, 23);
             this.cb_maLoai.TabIndex = 20;
             // 
             // label10
@@ -352,19 +345,6 @@ namespace QuanLyBenhNhan
             this.checkbox_nu.Text = "Nữ";
             this.checkbox_nu.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button1.Image = global::QuanLyBenhNhan.Properties.Resources.refresh_16;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(767, 66);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 26);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Refresh";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // frBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -389,7 +369,6 @@ namespace QuanLyBenhNhan
         #endregion
 
         private System.Windows.Forms.CheckBox checkbox_nam;
-        private System.Windows.Forms.TextBox txt_ngaysinh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cb_TenBn;
@@ -412,8 +391,7 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cb_maHS;
         private System.Windows.Forms.CheckBox checkbox_nu;
-        private System.Windows.Forms.TextBox txt_tenLoai;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

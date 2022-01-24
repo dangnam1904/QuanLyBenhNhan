@@ -132,6 +132,8 @@ namespace QuanLyBenhNhan
             txt_cdoanbenh.Text = "";
             txt_ngaysinh.Text = "";
             txt_mabacsi.Text = "";
+          
+                
 
 
         }

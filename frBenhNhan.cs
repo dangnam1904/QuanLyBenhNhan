@@ -67,6 +67,12 @@ namespace QuanLyBenhNhan
 
         private void Gridview_BN_Click(object sender, EventArgs e)
         {
+            if (btn_add.Enabled == false)
+            {
+                MessageBox.Show("Đang ở chế độ thêm mới!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cb_maHS.Focus();
+                return;
+            }
             if (BenhNhan.Rows.Count == 0) //Nếu không có dữ liệu
             {
                 MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -74,10 +80,10 @@ namespace QuanLyBenhNhan
             }
             cb_maHS.Text = Gridview_BN.CurrentRow.Cells["MaHoSo"].Value.ToString();
             cb_TenBn.Text = Gridview_BN.CurrentRow.Cells["TenBN"].Value.ToString();
-            string d1 = Gridview_BN.CurrentRow.Cells["NgaySinh"].Value.ToString();
-            txt_ngaysinh.Text = d1;
+          
+            dateTimePicker1.Value = (DateTime)Gridview_BN.CurrentRow.Cells["NgaySinh"].Value;
             cb_maLoai.Text = Gridview_BN.CurrentRow.Cells["MaLoaiBN"].Value.ToString();
-            txt_tenLoai.Text = Gridview_BN.CurrentRow.Cells["TenLoai"].Value.ToString();
+          
             string sex = Gridview_BN.CurrentRow.Cells["Gioitinh"].Value.ToString();
             if (sex == "Nam")
             {
@@ -100,6 +106,7 @@ namespace QuanLyBenhNhan
         {
             Resetvalues();
             cb_maHS.Enabled = true;
+            btn_add.Enabled = false;
            
         }
 
@@ -108,8 +115,7 @@ namespace QuanLyBenhNhan
             cb_maHS.Text = "";
             cb_maLoai.Text = "";
             cb_TenBn.Text = "";
-            txt_tenLoai.Text = "";
-            txt_ngaysinh.Text = "";
+          
             
         }
 
@@ -143,13 +149,13 @@ namespace QuanLyBenhNhan
                 {
                     string gioitinh = "Nam";
 
-                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + txt_ngaysinh.Text.Trim() + "',N'" + gioitinh + "','" + cb_maLoai.Text.Trim() + "')";
+                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" +dateTimePicker1.Value + "',N'" + gioitinh + "','" + cb_maLoai.Text.Trim() + "')";
                     Functions.RunSql(sql_addbenhnhan);
                 }
                 else if (checkbox_nu.Checked == true)
                 {
                     string gioitinh = "Nữ";
-                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + txt_ngaysinh.Text.Trim() + "',N'" + gioitinh + "', '" + cb_maLoai.Text.Trim() + "')";
+                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + dateTimePicker1.Value + "',N'" + gioitinh + "', '" + cb_maLoai.Text.Trim() + "')";
                     Functions.RunSql(sql_addbenhnhan);
                 }
             }
@@ -187,6 +193,8 @@ namespace QuanLyBenhNhan
         private void btn_edit_Click(object sender, EventArgs e)
         {
             cb_maHS.Enabled = false;
+            btn_add.Enabled=false;
+            btn_save.Enabled=false;
            
 
             if (BenhNhan.Rows.Count == 0)
@@ -204,13 +212,13 @@ namespace QuanLyBenhNhan
             if (checkbox_nam.Checked == true)
             {
                 gioitinh = "Nam";
-                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "', GioiTinh='" + gioitinh + "', MaLoaiBN='"+cb_maLoai.Text.Trim()+"' Where MaHoSo='" + cb_maHS.Text.Trim() + "' ";
+                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + dateTimePicker1.Value + "', GioiTinh='" + gioitinh + "', MaLoaiBN='"+cb_maLoai.Text.Trim()+"' Where MaHoSo='" + cb_maHS.Text.Trim() + "' ";
                 Functions.RunSql(sql_1);
             }
             if (checkbox_nu.Checked == true)
             {
                 gioitinh = "Nữ";
-                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "', GioiTinh='" + gioitinh + "',  MaLoaiBN='" + cb_maLoai.Text.Trim() + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "'  ";
+                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + dateTimePicker1.Value + "', GioiTinh='" + gioitinh + "',  MaLoaiBN='" + cb_maLoai.Text.Trim() + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "'  ";
                 Functions.RunSql(sql_1);
             }
             if(checkbox_nam.Checked==true && checkbox_nu.Checked == true)
