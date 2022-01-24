@@ -50,7 +50,6 @@ namespace QuanLyBenhNhan
             this.btn_find_maHso = new System.Windows.Forms.Button();
             this.btn_edit = new System.Windows.Forms.Button();
             this.checkbox_nam = new System.Windows.Forms.CheckBox();
-            this.txt_ngaysinh = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_TenBacSi = new System.Windows.Forms.ComboBox();
@@ -62,6 +61,7 @@ namespace QuanLyBenhNhan
             this.txt_diachi = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.date_ngaysinh = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.Gridview_BS)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -99,9 +99,9 @@ namespace QuanLyBenhNhan
             this.cb_makhoa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_makhoa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_makhoa.FormattingEnabled = true;
-            this.cb_makhoa.Location = new System.Drawing.Point(476, 104);
+            this.cb_makhoa.Location = new System.Drawing.Point(447, 104);
             this.cb_makhoa.Name = "cb_makhoa";
-            this.cb_makhoa.Size = new System.Drawing.Size(97, 23);
+            this.cb_makhoa.Size = new System.Drawing.Size(126, 23);
             this.cb_makhoa.TabIndex = 20;
             // 
             // label10
@@ -296,13 +296,6 @@ namespace QuanLyBenhNhan
             this.checkbox_nam.Text = "Nam";
             this.checkbox_nam.UseVisualStyleBackColor = true;
             // 
-            // txt_ngaysinh
-            // 
-            this.txt_ngaysinh.Location = new System.Drawing.Point(476, 58);
-            this.txt_ngaysinh.Name = "txt_ngaysinh";
-            this.txt_ngaysinh.Size = new System.Drawing.Size(127, 23);
-            this.txt_ngaysinh.TabIndex = 5;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -351,6 +344,7 @@ namespace QuanLyBenhNhan
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.date_ngaysinh);
             this.panel1.Controls.Add(this.txt_chuyenmon);
             this.panel1.Controls.Add(this.txt_sdt);
             this.panel1.Controls.Add(this.label7);
@@ -365,7 +359,6 @@ namespace QuanLyBenhNhan
             this.panel1.Controls.Add(this.cb_maBs);
             this.panel1.Controls.Add(this.checkbox_nu);
             this.panel1.Controls.Add(this.checkbox_nam);
-            this.panel1.Controls.Add(this.txt_ngaysinh);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.cb_TenBacSi);
@@ -427,6 +420,14 @@ namespace QuanLyBenhNhan
             this.label5.TabIndex = 25;
             this.label5.Text = "Chuyên môn";
             // 
+            // date_ngaysinh
+            // 
+            this.date_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_ngaysinh.Location = new System.Drawing.Point(447, 55);
+            this.date_ngaysinh.Name = "date_ngaysinh";
+            this.date_ngaysinh.Size = new System.Drawing.Size(145, 23);
+            this.date_ngaysinh.TabIndex = 32;
+            // 
             // fr_bacSi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -471,7 +472,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Button btn_find_maHso;
         private System.Windows.Forms.Button btn_edit;
         private System.Windows.Forms.CheckBox checkbox_nam;
-        private System.Windows.Forms.TextBox txt_ngaysinh;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cb_TenBacSi;
@@ -483,5 +483,6 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.TextBox txt_diachi;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox txt_chuyenmon;
+        private System.Windows.Forms.DateTimePicker date_ngaysinh;
     }
 }

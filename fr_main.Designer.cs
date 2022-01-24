@@ -141,42 +141,42 @@ namespace QuanLyBenhNhan
             this.nộiTrúToolStripMenuItem,
             this.ngoạiTrúToolStripMenuItem});
             this.bệnhNhânToolStripMenuItem1.Name = "bệnhNhânToolStripMenuItem1";
-            this.bệnhNhânToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.bệnhNhânToolStripMenuItem1.Size = new System.Drawing.Size(157, 26);
             this.bệnhNhânToolStripMenuItem1.Text = "Bệnh Nhân";
             this.bệnhNhânToolStripMenuItem1.Click += new System.EventHandler(this.bệnhNhânToolStripMenuItem1_Click);
             // 
             // chuyểnViệnToolStripMenuItem
             // 
             this.chuyểnViệnToolStripMenuItem.Name = "chuyểnViệnToolStripMenuItem";
-            this.chuyểnViệnToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.chuyểnViệnToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.chuyểnViệnToolStripMenuItem.Text = "Chuyển viện";
             this.chuyểnViệnToolStripMenuItem.Click += new System.EventHandler(this.chuyểnViệnToolStripMenuItem_Click);
             // 
             // nộiTrúToolStripMenuItem
             // 
             this.nộiTrúToolStripMenuItem.Name = "nộiTrúToolStripMenuItem";
-            this.nộiTrúToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.nộiTrúToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.nộiTrúToolStripMenuItem.Text = "Nội trú";
             this.nộiTrúToolStripMenuItem.Click += new System.EventHandler(this.nộiTrúToolStripMenuItem_Click);
             // 
             // ngoạiTrúToolStripMenuItem
             // 
             this.ngoạiTrúToolStripMenuItem.Name = "ngoạiTrúToolStripMenuItem";
-            this.ngoạiTrúToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.ngoạiTrúToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.ngoạiTrúToolStripMenuItem.Text = "Ngoại trú";
             this.ngoạiTrúToolStripMenuItem.Click += new System.EventHandler(this.ngoạiTrúToolStripMenuItem_Click);
             // 
             // bácSiToolStripMenuItem
             // 
             this.bácSiToolStripMenuItem.Name = "bácSiToolStripMenuItem";
-            this.bácSiToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.bácSiToolStripMenuItem.Size = new System.Drawing.Size(157, 26);
             this.bácSiToolStripMenuItem.Text = "Bác sĩ";
             this.bácSiToolStripMenuItem.Click += new System.EventHandler(this.bácSiToolStripMenuItem_Click);
             // 
             // toaThuốcToolStripMenuItem1
             // 
             this.toaThuốcToolStripMenuItem1.Name = "toaThuốcToolStripMenuItem1";
-            this.toaThuốcToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.toaThuốcToolStripMenuItem1.Size = new System.Drawing.Size(157, 26);
             this.toaThuốcToolStripMenuItem1.Text = "Toa Thuốc";
             this.toaThuốcToolStripMenuItem1.Click += new System.EventHandler(this.toaThuốcToolStripMenuItem1_Click);
             // 
@@ -191,6 +191,7 @@ namespace QuanLyBenhNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QuanLyBenhNhan.Properties.Resources.Anh_BV;
             this.ClientSize = new System.Drawing.Size(1029, 630);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);

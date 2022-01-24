@@ -29,13 +29,11 @@ namespace QuanLyBenhNhan
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_ngaychuyen = new System.Windows.Forms.TextBox();
             this.checkbox_nu = new System.Windows.Forms.CheckBox();
             this.Gridview_BN_CV = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.checkbox_nam = new System.Windows.Forms.CheckBox();
             this.txt_bacsikham = new System.Windows.Forms.TextBox();
-            this.txt_ngaysinh = new System.Windows.Forms.TextBox();
             this.btn_sort = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,18 +64,13 @@ namespace QuanLyBenhNhan
             this.btn_add = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.date_ngaysinh = new System.Windows.Forms.DateTimePicker();
+            this.date_ngaychuyen = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.Gridview_BN_CV)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txt_ngaychuyen
-            // 
-            this.txt_ngaychuyen.Location = new System.Drawing.Point(723, 103);
-            this.txt_ngaychuyen.Name = "txt_ngaychuyen";
-            this.txt_ngaychuyen.Size = new System.Drawing.Size(199, 23);
-            this.txt_ngaychuyen.TabIndex = 9;
             // 
             // checkbox_nu
             // 
@@ -112,7 +105,7 @@ namespace QuanLyBenhNhan
             // checkbox_nam
             // 
             this.checkbox_nam.AutoSize = true;
-            this.checkbox_nam.Location = new System.Drawing.Point(592, 64);
+            this.checkbox_nam.Location = new System.Drawing.Point(628, 65);
             this.checkbox_nam.Name = "checkbox_nam";
             this.checkbox_nam.Size = new System.Drawing.Size(52, 19);
             this.checkbox_nam.TabIndex = 6;
@@ -125,13 +118,6 @@ namespace QuanLyBenhNhan
             this.txt_bacsikham.Name = "txt_bacsikham";
             this.txt_bacsikham.Size = new System.Drawing.Size(168, 23);
             this.txt_bacsikham.TabIndex = 5;
-            // 
-            // txt_ngaysinh
-            // 
-            this.txt_ngaysinh.Location = new System.Drawing.Point(410, 61);
-            this.txt_ngaysinh.Name = "txt_ngaysinh";
-            this.txt_ngaysinh.Size = new System.Drawing.Size(100, 23);
-            this.txt_ngaysinh.TabIndex = 5;
             // 
             // btn_sort
             // 
@@ -288,6 +274,8 @@ namespace QuanLyBenhNhan
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.date_ngaychuyen);
+            this.panel1.Controls.Add(this.date_ngaysinh);
             this.panel1.Controls.Add(this.txt_mabacsi);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label11);
@@ -300,12 +288,10 @@ namespace QuanLyBenhNhan
             this.panel1.Controls.Add(this.cb_maKhoa);
             this.panel1.Controls.Add(this.txt_noichuyen);
             this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.txt_ngaychuyen);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.checkbox_nu);
             this.panel1.Controls.Add(this.checkbox_nam);
             this.panel1.Controls.Add(this.txt_bacsikham);
-            this.panel1.Controls.Add(this.txt_ngaysinh);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -468,6 +454,22 @@ namespace QuanLyBenhNhan
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // date_ngaysinh
+            // 
+            this.date_ngaysinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_ngaysinh.Location = new System.Drawing.Point(414, 60);
+            this.date_ngaysinh.Name = "date_ngaysinh";
+            this.date_ngaysinh.Size = new System.Drawing.Size(164, 23);
+            this.date_ngaysinh.TabIndex = 24;
+            // 
+            // date_ngaychuyen
+            // 
+            this.date_ngaychuyen.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.date_ngaychuyen.Location = new System.Drawing.Point(723, 109);
+            this.date_ngaychuyen.Name = "date_ngaychuyen";
+            this.date_ngaychuyen.Size = new System.Drawing.Size(164, 23);
+            this.date_ngaychuyen.TabIndex = 25;
+            // 
             // frBN_CV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -490,14 +492,11 @@ namespace QuanLyBenhNhan
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txt_ngaychuyen;
         private System.Windows.Forms.CheckBox checkbox_nu;
         private System.Windows.Forms.DataGridView Gridview_BN_CV;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkbox_nam;
         private System.Windows.Forms.TextBox txt_bacsikham;
-        private System.Windows.Forms.TextBox txt_ngaysinh;
         private System.Windows.Forms.Button btn_sort;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -528,5 +527,7 @@ namespace QuanLyBenhNhan
         private System.Windows.Forms.Button btn_add;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker date_ngaychuyen;
+        private System.Windows.Forms.DateTimePicker date_ngaysinh;
     }
 }

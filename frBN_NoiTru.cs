@@ -35,6 +35,7 @@ namespace QuanLyBenhNhan
             Gridview_BN_NoiTru.DataSource = bn_noitru; //Nguồn dữ liệu            
             Gridview_BN_NoiTru.Columns[0].HeaderText = "Mã hồ sơ";
             Gridview_BN_NoiTru.Columns[1].HeaderText = " Họ tên";
+            Gridview_BN_NoiTru.Columns[1].Width=250;
             Gridview_BN_NoiTru.Columns[2].DefaultCellStyle.Format = "dd/MM/yyyy";
           
             Gridview_BN_NoiTru.Columns[2].HeaderText = "Ngày sinh";
@@ -60,12 +61,11 @@ namespace QuanLyBenhNhan
             }
             cb_maHS.Text = Gridview_BN_NoiTru.CurrentRow.Cells["MaHoSo"].Value.ToString();
             cb_TenBn.Text = Gridview_BN_NoiTru.CurrentRow.Cells["TenBN"].Value.ToString();
-           string d1=  Gridview_BN_NoiTru.CurrentRow.Cells["NgaySinh"].Value.ToString();
-            String.Format("{0:MM/dd/yyyy}", d1);
-            txt_ngaysinh.Text = d1;
+          datetime_ngaysinh.Value= (DateTime) Gridview_BN_NoiTru.CurrentRow.Cells["NgaySinh"].Value;
+
             cb_maNoiTru.Text = Gridview_BN_NoiTru.CurrentRow.Cells["Ma_NoiTru"].Value.ToString();
-            txt_ngaynhapvien.Text = Gridview_BN_NoiTru.CurrentRow.Cells["NgayNhapVien"].Value.ToString();
-            txt_ngayravien.Text = Gridview_BN_NoiTru.CurrentRow.Cells["NgayRaVien"].Value.ToString();
+           date_nhapvien.Value =(DateTime) Gridview_BN_NoiTru.CurrentRow.Cells["NgayNhapVien"].Value;
+           date_ravien.Value = (DateTime) Gridview_BN_NoiTru.CurrentRow.Cells["NgayRaVien"].Value;
             txt_chuandoanbenh.Text = Gridview_BN_NoiTru.CurrentRow.Cells["ChuanDoanBenh"].Value.ToString();
             txt_sogiuong.Text = Gridview_BN_NoiTru.CurrentRow.Cells["SoGiuong"].Value.ToString();
             cb_maNoiTru.Text = Gridview_BN_NoiTru.CurrentRow.Cells["Ma_NoiTru"].Value.ToString();
@@ -115,6 +115,7 @@ namespace QuanLyBenhNhan
         private void btn_add_Click(object sender, EventArgs e)
         {
             Resetvalues();
+            btn_add.Enabled = false;
             cb_maHS.Enabled = true;
             cb_maNoiTru.Enabled = true;
             txt_mabacsi.Enabled = true;
@@ -129,9 +130,6 @@ namespace QuanLyBenhNhan
             cb_TenBn.Text = "";
             txt_bacsikham.Text = "";
             txt_chuandoanbenh.Text = "";
-            txt_ngaynhapvien.Text = "";
-            txt_ngayravien.Text = "";
-            txt_ngaysinh.Text = "";
             txt_sogiuong.Text = "";
             txt_mabacsi.Text = "";
 
@@ -183,13 +181,13 @@ namespace QuanLyBenhNhan
                 {
                     string  gioitinh = "Nam";
                    
-                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + txt_ngaysinh.Text.Trim() + "',N'" + gioitinh + "','"+maLoaiBN+"')";
+                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + datetime_ngaysinh.Value + "',N'" + gioitinh + "','"+maLoaiBN+"')";
                     Functions.RunSql(sql_addbenhnhan);
                 }
                 else if( checkbox_nu.Checked==true)
                 {
                    string gioitinh = "Nữ";
-                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + txt_ngaysinh.Text.Trim() + "',N'" + gioitinh + "', '" + maLoaiBN + "')";
+                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + datetime_ngaysinh.Value + "',N'" + gioitinh + "', '" + maLoaiBN + "')";
                     Functions.RunSql(sql_addbenhnhan);
                 }
             }
@@ -203,7 +201,7 @@ namespace QuanLyBenhNhan
                     return;
                 }
                 string maLoaiBN = "BN_NoiT";
-                string add_BN_Ntru = "insert into  BN_NoiTru values('" + cb_maNoiTru.Text.Trim() + "','" + txt_ngaynhapvien.Text.Trim() + "','" + txt_ngayravien.Text.Trim() + "','" + txt_chuandoanbenh.Text.Trim() + "'," + txt_sogiuong.Text.Trim() + ",'" + cb_maKhoa.Text.Trim() + "','"+maLoaiBN+"','" + cb_maHS.Text.Trim() + "','" + txt_mabacsi.Text.Trim() + "')";
+                string add_BN_Ntru = "insert into  BN_NoiTru values('" + cb_maNoiTru.Text.Trim() + "','" + date_nhapvien.Value + "','" + date_ravien.Value + "','" + txt_chuandoanbenh.Text.Trim() + "'," + txt_sogiuong.Text.Trim() + ",'" + cb_maKhoa.Text.Trim() + "','"+maLoaiBN+"','" + cb_maHS.Text.Trim() + "','" + txt_mabacsi.Text.Trim() + "')";
                 Functions.RunSql(add_BN_Ntru);
             }
             LoadDataGridView(); //Nạp lại DataGridView
@@ -242,19 +240,19 @@ namespace QuanLyBenhNhan
             if (checkbox_nam.Checked == true)
             {
                 gioitinh = "Nam";
-                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "', GioiTinh='" + gioitinh + "' Where MaHoSo='"+cb_maHS.Text.Trim()+"' ";
+                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + datetime_ngaysinh.Value + "', GioiTinh='" + gioitinh + "' Where MaHoSo='"+cb_maHS.Text.Trim()+"' ";
                 Functions.RunSql(sql_1);
             }
             if (checkbox_nu.Checked == true)
             {
                     gioitinh = "Nữ";
-                    string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "'  ";
+                    string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + datetime_ngaysinh.Value + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "'  ";
                     Functions.RunSql(sql_1);
             }
 
             string edit_Bsi = "update BacSi set TenBacSi=N'" + txt_bacsikham.Text.Trim() + "' where MaBacSi ='"+txt_mabacsi.Text.Trim()+"'";
             Functions.RunSql(edit_Bsi);
-            String edit_BN_NoiTru = "update BN_NoiTru set NgayNhapVien='"+txt_ngaynhapvien.Text.Trim()+"',NgayRaVien='"+txt_ngayravien.Text.Trim()+"', ChuanDoanBenh='"+txt_chuandoanbenh.Text.Trim()+"',SoGiuong="+txt_sogiuong.Text.Trim()+",MaKhoa='"+cb_maKhoa.Text.Trim()+"' where Ma_NoiTru='"+cb_maNoiTru.Text.Trim()+"' ";
+            String edit_BN_NoiTru = "update BN_NoiTru set NgayNhapVien='"+date_nhapvien.Value+"',NgayRaVien='"+date_ravien.Value+"', ChuanDoanBenh='"+txt_chuandoanbenh.Text.Trim()+"',SoGiuong="+txt_sogiuong.Text.Trim()+",MaKhoa='"+cb_maKhoa.Text.Trim()+"' where Ma_NoiTru='"+cb_maNoiTru.Text.Trim()+"' ";
             Functions.RunSql(edit_BN_NoiTru);
             LoadDataGridView(); //Nạp lại DataGridView
         }

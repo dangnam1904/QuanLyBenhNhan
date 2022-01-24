@@ -77,7 +77,7 @@ namespace QuanLyBenhNhan
         {
             cb_maBs.Text = Gridview_BS.CurrentRow.Cells["MaBacSi"].Value.ToString();
             cb_makhoa.Text = Gridview_BS.CurrentRow.Cells["MaKhoa"].Value.ToString();
-            txt_ngaysinh.Text = Gridview_BS.CurrentRow.Cells["NgaySinh"].Value.ToString();
+            date_ngaysinh.Value = (DateTime) Gridview_BS.CurrentRow.Cells["NgaySinh"].Value;
             txt_sdt.Text = Gridview_BS.CurrentRow.Cells["Sđt"].Value.ToString();
             txt_tenKhoa.Text = Gridview_BS.CurrentRow.Cells["TenKhoa"].Value.ToString();
             txt_chuyenmon.Text = Gridview_BS.CurrentRow.Cells["ChuyenMon"].Value.ToString();
@@ -106,8 +106,7 @@ namespace QuanLyBenhNhan
         {
             txt_chuyenmon.Text = "";
             txt_diachi.Text = "";
-            txt_ngaysinh.Text = "";
-            txt_ngaysinh.Text = "";
+           
             txt_sdt.Text = "";
             cb_maBs.Text = "";
             cb_makhoa.Text = "";
@@ -146,13 +145,13 @@ namespace QuanLyBenhNhan
                 {
                     string gioitinh = "Nam";
 
-                    String sql_add = "insert into BacSi values('"+cb_maBs.Text.Trim()+"',N'"+cb_TenBacSi.Text.Trim()+"','"+txt_ngaysinh.Text.Trim()+"',N'"+gioitinh+"','"+txt_sdt.Text.Trim()+"',N'"+txt_diachi.Text.Trim()+"',N'"+txt_chuyenmon.Text.Trim()+"','"+cb_makhoa.Text.Trim()+"')";
+                    String sql_add = "insert into BacSi values('"+cb_maBs.Text.Trim()+"',N'"+cb_TenBacSi.Text.Trim()+"','"+ date_ngaysinh .Value+ "',N'"+gioitinh+"','"+txt_sdt.Text.Trim()+"',N'"+txt_diachi.Text.Trim()+"',N'"+txt_chuyenmon.Text.Trim()+"','"+cb_makhoa.Text.Trim()+"')";
                     Functions.RunSql(sql_add);
                 }
                 else if (checkbox_nu.Checked == true)
                 {
                     string gioitinh = "Nữ";
-                    String sql_add = "insert into BacSi values('" + cb_maBs.Text.Trim() + "',N'" + cb_TenBacSi.Text.Trim() + "','" + txt_ngaysinh.Text.Trim() + "',N'" + gioitinh + "','" + txt_sdt.Text.Trim() + "',N'" + txt_diachi.Text.Trim() + "',N'" + txt_chuyenmon.Text.Trim() + "','" + cb_makhoa.Text.Trim() + "')";
+                    String sql_add = "insert into BacSi values('" + cb_maBs.Text.Trim() + "',N'" + cb_TenBacSi.Text.Trim() + "','" + date_ngaysinh.Value + "',N'" + gioitinh + "','" + txt_sdt.Text.Trim() + "',N'" + txt_diachi.Text.Trim() + "',N'" + txt_chuyenmon.Text.Trim() + "','" + cb_makhoa.Text.Trim() + "')";
                     Functions.RunSql(sql_add);
                 }
             }
@@ -207,13 +206,13 @@ namespace QuanLyBenhNhan
             if (checkbox_nam.Checked == true)
             {
                 gioitinh = "Nam";
-                string sql_1 = "Update BacSi set MaBacSi ='" + cb_maBs.Text.Trim() + "', TenBacSi= N'" + cb_TenBacSi.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "',GioiTinh=N'" + gioitinh + "',Sđt='" + txt_sdt.Text.Trim() + "', DiaChi=N'" + txt_diachi.Text.Trim() + "', ChuyenMon= N'" + txt_chuyenmon.Text.Trim() + "', MaKhoa='" + cb_makhoa.Text.Trim() + "' where MaBacSi='"+cb_maBs.Text.Trim()+"' ";
+                string sql_1 = "Update BacSi set MaBacSi ='" + cb_maBs.Text.Trim() + "', TenBacSi= N'" + cb_TenBacSi.Text.Trim() + "',NgaySinh='" + date_ngaysinh.Value + "',GioiTinh=N'" + gioitinh + "',Sđt='" + txt_sdt.Text.Trim() + "', DiaChi=N'" + txt_diachi.Text.Trim() + "', ChuyenMon= N'" + txt_chuyenmon.Text.Trim() + "', MaKhoa='" + cb_makhoa.Text.Trim() + "' where MaBacSi='"+cb_maBs.Text.Trim()+"' ";
                 Functions.RunSql(sql_1);
             }
             if (checkbox_nu.Checked == true)
             {
                 gioitinh = "Nữ";
-                string sql_1 = "Update BacSi set MaBacSi ='" + cb_maBs.Text.Trim() + "', TenBacSi= N'" + cb_TenBacSi.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "',GioiTinh=N'" + gioitinh + "',Sđt='" + txt_sdt.Text.Trim() + "', DiaChi=N'" + txt_diachi.Text.Trim() + "', ChuyenMon= N'" + txt_chuyenmon.Text.Trim() + "', MaKhoa='" + cb_makhoa.Text.Trim() + "' where MaBacSi='" + cb_maBs.Text.Trim() + "' ";
+                string sql_1 = "Update BacSi set MaBacSi ='" + cb_maBs.Text.Trim() + "', TenBacSi= N'" + cb_TenBacSi.Text.Trim() + "',NgaySinh='" + date_ngaysinh.Value + "',GioiTinh=N'" + gioitinh + "',Sđt='" + txt_sdt.Text.Trim() + "', DiaChi=N'" + txt_diachi.Text.Trim() + "', ChuyenMon= N'" + txt_chuyenmon.Text.Trim() + "', MaKhoa='" + cb_makhoa.Text.Trim() + "' where MaBacSi='" + cb_maBs.Text.Trim() + "' ";
                 Functions.RunSql(sql_1);
             }
             if (checkbox_nam.Checked == true && checkbox_nu.Checked == true)

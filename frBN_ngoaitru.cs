@@ -89,9 +89,7 @@ namespace QuanLyBenhNhan
             cb_TenBn.Text = "";
             txt_bacsikham.Text = "";
             txt_BHYT.Text = "";
-            txt_ngaykham.Text = "";
             txt_mathuoc.Text = "";
-            txt_ngaysinh.Text = "";
             txt_tenThuoc.Text = "";
 
         }
@@ -105,11 +103,10 @@ namespace QuanLyBenhNhan
             }
             cb_maHS.Text = Gridview_BN_Ngoaitru.CurrentRow.Cells["MaHoSo"].Value.ToString();
             cb_TenBn.Text = Gridview_BN_Ngoaitru.CurrentRow.Cells["TenBN"].Value.ToString();
-            string d1 = Gridview_BN_Ngoaitru.CurrentRow.Cells["NgaySinh"].Value.ToString();
-            String.Format("{0:MM/dd/yyyy}", d1);
-            txt_ngaysinh.Text = d1;
+            date_birthday.Value = (DateTime)Gridview_BN_Ngoaitru.CurrentRow.Cells["NgaySinh"].Value;
+           
             cb_maNgtru.Text = Gridview_BN_Ngoaitru.CurrentRow.Cells["Ma_NgoaiTru"].Value.ToString();
-            txt_ngaykham.Text = Gridview_BN_Ngoaitru.CurrentRow.Cells["NgayKham"].Value.ToString();
+            date_ngaykham.Value = (DateTime) Gridview_BN_Ngoaitru.CurrentRow.Cells["NgayKham"].Value;
            
             txt_BHYT.Text = Gridview_BN_Ngoaitru.CurrentRow.Cells["SoBHYT"].Value.ToString();
             txt_mathuoc.Text = Gridview_BN_Ngoaitru.CurrentRow.Cells["MaToaThuoc"].Value.ToString();
@@ -187,13 +184,13 @@ namespace QuanLyBenhNhan
                 if (checkbox_nam.Checked == true)
                 {
                     string gioitinh = "Nam";
-                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + txt_ngaysinh.Text.Trim() + "',N'" + gioitinh + "', '" + maLoaiBN + "')";
+                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" +date_birthday.Value + "',N'" + gioitinh + "', '" + maLoaiBN + "')";
                     Functions.RunSql(sql_addbenhnhan);
                 }
                 else if (checkbox_nu.Checked == true)
                 {
                     string gioitinh = "Nữ";
-                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + txt_ngaysinh.Text.Trim() + "',N'" + gioitinh + "','" + maLoaiBN + "')";
+                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + date_birthday.Value + "',N'" + gioitinh + "','" + maLoaiBN + "')";
                     Functions.RunSql(sql_addbenhnhan);
                 }
             }
@@ -207,7 +204,7 @@ namespace QuanLyBenhNhan
                     return;
                 }
                 string maLoaiBN = "BN_NGoaiT";
-                string add_BN_Ntru = "insert into  BN_NgoaiTru values('" + cb_maNgtru.Text.Trim() + "','" +txt_ngaykham.Text.Trim() + "','" + txt_BHYT.Text.Trim() + "','" + txt_mathuoc.Text.Trim() + "','" +cb_maHS.Text.Trim() + "','" + maLoaiBN + "','" + txt_mabacsi.Text.Trim() + "')";
+                string add_BN_Ntru = "insert into  BN_NgoaiTru values('" + cb_maNgtru.Text.Trim() + "','" +date_ngaykham.Value + "','" + txt_BHYT.Text.Trim() + "','" + txt_mathuoc.Text.Trim() + "','" +cb_maHS.Text.Trim() + "','" + maLoaiBN + "','" + txt_mabacsi.Text.Trim() + "')";
                 Functions.RunSql(add_BN_Ntru);
             }
             LoadDataGridView(); //Nạp lại DataGridView
@@ -256,19 +253,19 @@ namespace QuanLyBenhNhan
             if (checkbox_nam.Checked == true)
             {
                 gioitinh = "Nam";
-                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "' ";
+                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + date_birthday.Value + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "' ";
                 Functions.RunSql(sql_1);
             }
             if (checkbox_nu.Checked == true)
             {
                 gioitinh = "Nữ";
-                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "'  ";
+                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + date_birthday.Value + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "'  ";
                 Functions.RunSql(sql_1);
             }
 
             string edit_Bsi = "update BacSi set TenBacSi=N'" + txt_bacsikham.Text.Trim() + "' where MaBacSi ='" + txt_mabacsi.Text.Trim() + "'";
             Functions.RunSql(edit_Bsi);
-            String edit_BN_NoiTru = "update BN_NgoaiTru set NgayKham='"+txt_ngaykham.Text.Trim()+"', SoBHYT='"+txt_BHYT.Text.Trim()+"', MaToaThuoc='"+txt_mathuoc.Text.Trim()+"' ";
+            String edit_BN_NoiTru = "update BN_NgoaiTru set NgayKham='"+date_ngaykham.Value+"', SoBHYT='"+txt_BHYT.Text.Trim()+"', MaToaThuoc='"+txt_mathuoc.Text.Trim()+"' ";
             Functions.RunSql(edit_BN_NoiTru);
             LoadDataGridView(); //Nạp lại DataGridView
         }
@@ -322,5 +319,7 @@ namespace QuanLyBenhNhan
         {
             LoadDataGridView();
         }
+
+       
     }
 }

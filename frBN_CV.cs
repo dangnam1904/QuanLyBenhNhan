@@ -86,9 +86,9 @@ namespace QuanLyBenhNhan
             }
             cb_maHS.Text = Gridview_BN_CV.CurrentRow.Cells["MaHoSo"].Value.ToString();
             cb_TenBn.Text = Gridview_BN_CV.CurrentRow.Cells["TenBN"].Value.ToString();
-            string d1 = Gridview_BN_CV.CurrentRow.Cells["NgaySinh"].Value.ToString();
+           date_ngaysinh.Value =  (DateTime) Gridview_BN_CV.CurrentRow.Cells["NgaySinh"].Value;
             
-            txt_ngaysinh.Text = d1;
+           
             cb_MaCV.Text = Gridview_BN_CV.CurrentRow.Cells["Ma_CV"].Value.ToString();
             txt_cdoanbenh.Text = Gridview_BN_CV.CurrentRow.Cells["ChuanDoanBenh"].Value.ToString();
             txt_noichuyen.Text = Gridview_BN_CV.CurrentRow.Cells["NoiChuyen"].Value.ToString();
@@ -96,7 +96,7 @@ namespace QuanLyBenhNhan
           
             txt_bacsikham.Text = Gridview_BN_CV.CurrentRow.Cells["TenBacSi"].Value.ToString();
             txt_mabacsi.Text = Gridview_BN_CV.CurrentRow.Cells["MaBacSi"].Value.ToString();
-            txt_ngaychuyen.Text = Gridview_BN_CV.CurrentRow.Cells["NgayChuyen"].Value.ToString();
+           date_ngaychuyen.Value =(DateTime) Gridview_BN_CV.CurrentRow.Cells["NgayChuyen"].Value;
 
             string sex = Gridview_BN_CV.CurrentRow.Cells["Gioitinh"].Value.ToString();
             if (sex == "Nam")
@@ -128,9 +128,9 @@ namespace QuanLyBenhNhan
             cb_TenBn.Text = "";
             txt_bacsikham.Text = "";
             txt_noichuyen.Text = "";
-            txt_ngaychuyen.Text = "";
+         
             txt_cdoanbenh.Text = "";
-            txt_ngaysinh.Text = "";
+          
             txt_mabacsi.Text = "";
           
                 
@@ -180,13 +180,13 @@ namespace QuanLyBenhNhan
                 if (checkbox_nam.Checked == true)
                 {
                     string gioitinh = "Nam";
-                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + txt_ngaysinh.Text.Trim() + "',N'" + gioitinh + "', '" + maLoaiBN + "')";
+                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + date_ngaysinh.Value + "',N'" + gioitinh + "', '" + maLoaiBN + "')";
                     Functions.RunSql(sql_addbenhnhan);
                 }
                 else if (checkbox_nu.Checked == true)
                 {
                     string gioitinh = "Nữ";
-                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + txt_ngaysinh.Text.Trim() + "',N'" + gioitinh + "', '" + maLoaiBN + "')";
+                    String sql_addbenhnhan = "insert into BenhNhan values(N'" + cb_maHS.Text.Trim() + "',N'" + cb_TenBn.Text.Trim() + "','" + date_ngaysinh.Value + "',N'" + gioitinh + "', '" + maLoaiBN + "')";
                     Functions.RunSql(sql_addbenhnhan);
                 }
             }
@@ -200,7 +200,7 @@ namespace QuanLyBenhNhan
                     return;
                 }
                 string maLoaiBN = "BN_CV";
-                string add_BN_Cv = "insert into  BN_CV values('" + cb_MaCV.Text.Trim() + "',N'" + txt_cdoanbenh.Text.Trim() + "','" + txt_ngaychuyen.Text.Trim() + "',N'"+txt_noichuyen.Text.Trim()+"', '" + cb_maKhoa.Text.Trim() + "','" + cb_maHS.Text.Trim() + "','" + maLoaiBN + "','" + txt_mabacsi.Text.Trim() + "')";
+                string add_BN_Cv = "insert into  BN_CV values('" + cb_MaCV.Text.Trim() + "',N'" + txt_cdoanbenh.Text.Trim() + "','" +date_ngaychuyen.Value + "',N'"+txt_noichuyen.Text.Trim()+"', '" + cb_maKhoa.Text.Trim() + "','" + cb_maHS.Text.Trim() + "','" + maLoaiBN + "','" + txt_mabacsi.Text.Trim() + "')";
                 Functions.RunSql(add_BN_Cv);
             }
             LoadDataGridView(); //Nạp lại DataGridView
@@ -249,19 +249,19 @@ namespace QuanLyBenhNhan
             if (checkbox_nam.Checked == true)
             {
                 gioitinh = "Nam";
-                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "' ";
+                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" +date_ngaysinh.Value + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "' ";
                 Functions.RunSql(sql_1);
             }
             if (checkbox_nu.Checked == true)
             {
                 gioitinh = "Nữ";
-                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + txt_ngaysinh.Text.Trim() + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "'  ";
+                string sql_1 = "Update BenhNhan set MaHoSo='" + cb_maHS.Text.Trim() + "', TenBN=N'" + cb_TenBn.Text.Trim() + "',NgaySinh='" + date_ngaysinh.Value + "', GioiTinh='" + gioitinh + "' Where MaHoSo='" + cb_maHS.Text.Trim() + "'  ";
                 Functions.RunSql(sql_1);
             }
 
             string edit_Bsi = "update BacSi set TenBacSi=N'" + txt_bacsikham.Text.Trim() + "' where MaBacSi ='" + txt_mabacsi.Text.Trim() + "' ";
             Functions.RunSql(edit_Bsi);
-            String edit_BN_CV = "update BN_CV set ChuanDoanBenh=N'"+txt_cdoanbenh.Text.Trim()+"', NgayChuyen='"+txt_ngaychuyen.Text.Trim()+"', NoiChuyen=N'"+txt_noichuyen.Text.Trim()+"', MaKhoa= '"+cb_maKhoa.Text.Trim()+"', MaBacSi='"+txt_mabacsi.Text.Trim()+"' ";
+            String edit_BN_CV = "update BN_CV set ChuanDoanBenh=N'"+txt_cdoanbenh.Text.Trim()+"', NgayChuyen='"+date_ngaychuyen.Value+"', NoiChuyen=N'"+txt_noichuyen.Text.Trim()+"', MaKhoa= '"+cb_maKhoa.Text.Trim()+"', MaBacSi='"+txt_mabacsi.Text.Trim()+"' ";
             Functions.RunSql(edit_BN_CV);
             LoadDataGridView(); //Nạp lại DataGridView
         }
